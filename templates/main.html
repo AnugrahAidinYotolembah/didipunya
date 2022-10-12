@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H8 Model Deployment</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1><center>Hacktiv8 Student Placement Classifier</center></h1>
+    <h4><center>created by Anugrah Aidin Yotolembah</center></h4>
+ 
+    <!-- The form -->
+    <form action="{{ url_for('predict') }}" method="post">
+        <!-- Some input checks -->
+        <input type="text" name="ssc" placeholder="Secondary Education" required="required" />
+        <input type="text" name="hsc" placeholder="Highschool" required="required" />
+        <input type="text" name="degree" placeholder="Degree" required="required" />
+        <input type="text" name="etest" placeholder="Interview Score" required="required" />
+ 
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+ 
+        <!-- The results -->
+        <p>{{ prediction_text }}</p>
+    </form>
+</body>
+</html>
